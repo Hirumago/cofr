@@ -1,0 +1,35 @@
+body{
+    text-align: center;
+}
+
+table{
+    text-align: center;
+    border-collapse: collapse;
+    margin: 20px 0 20px 0;
+}
+table th, table td{
+    border: 2px solid #ababab;
+    padding: 10px;
+}
+
+.error{
+    color: red;
+}
+
+.lettres{
+    display: inline-block;
+}
+
+.lettres:not(:first-of-type){
+    margin-left: 20px;
+}
+
+.lettres h3{
+    text-align: center;
+}
+
+.reponse{
+    width: 40px;
+    padding: 5px;
+    text-align: center;
+}
