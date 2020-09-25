@@ -16,6 +16,12 @@ $(document).ready(function(){
 
                 let step = 1;
 
+                $('#tableau-lettres input').keypress(function(event){
+                    if(event.keyCode === 13){
+                        $("#validation").click();
+                    }
+                });
+
                 $("#validation").click(function(){
                     let input = $('.ligne-reponse:nth-of-type('+step+') input')[0];
                     let reponse = input.value;
