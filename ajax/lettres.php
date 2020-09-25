@@ -9,7 +9,7 @@ $tab_voyelles_base = array(
 
 //voyelles composées
 $tab_voyelles_composees = array(
-    "ㅐ" => "é-è", "ㅒ" => "yé-yè", "ㅔ" => "yé-yè", "ㅖ" => "yé-yè", "ㅘ" => "wa", "ㅙ" => "wé-wè", "ㅚ" => "wé-wè", "ㅝ" => "weo", "ㅞ" => "wé-wè", "ㅟ" => "wi", "ㅢ" => "eui"
+    "ㅐ" => "é-è", "ㅒ" => "yé-yè", "ㅔ" => "é-è", "ㅖ" => "yé-yè", "ㅘ" => "wa", "ㅙ" => "wé-wè", "ㅚ" => "wé-wè", "ㅝ" => "weo", "ㅞ" => "wé-wè", "ㅟ" => "wi", "ㅢ" => "eui"
 );
 
 //consonnes de base
@@ -253,7 +253,7 @@ elseif (isset($_GET['entrainement'])) {
     $entrainement = array_merge($tab_voyelles_base, $tab_voyelles_composees, $tab_consonnes_base, $tab_consonnes_doubles);
 //    $entrainement = $tab_consonnes_doubles;
 //    $entrainement = $tab_voyelles_composees;
-
+    $entrainement = shuffle_assoc($entrainement);
     $_SESSION['entrainement'] = $entrainement;
 
     ?>
@@ -408,4 +408,16 @@ elseif (isset($_GET['tableau_entier'])) {
     </div>
 
     <?php
+}
+
+function shuffle_assoc($list) {
+    if (!is_array($list)) return $list;
+
+    $keys = array_keys($list);
+    shuffle($keys);
+    $random = array();
+    foreach ($keys as $key) {
+        $random[$key] = $list[$key];
+    }
+    return $random;
 }
