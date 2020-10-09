@@ -13,6 +13,12 @@
 
     <button>Tableaux entiers</button>
 </div>
+<div id="vocabulaire">
+    <h2>Vocabulaire coréen</h2>
+    <button>Salve 1</button>
+    <h2>Vocabulaire coréen</h2>
+    <button>Tableau entier</button>
+</div>
 <div id="test-area">
 
 </div>
